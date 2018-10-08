@@ -1,0 +1,24 @@
+<div>
+    <br>
+    <div class="container">
+
+        <br>
+        <div class="container" *ngIf="data">
+            <div class="content" *ngFor="let category of data">
+                <mat-card class="card">
+                    <mat-card-title >
+                        {{category.name}}
+                        <button mat-fab><mat-icon>add</mat-icon></button>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <mat-grid-list [responsiveCols]="{xs: 2, sm: 2, md: 4, lg: 6, xl: 8}" rowHeight="50px">
+                            <mat-grid-tile *ngFor="let button of category.buttons">
+                                <button-sound [button]="button"></button-sound>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

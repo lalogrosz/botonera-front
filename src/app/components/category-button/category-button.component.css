@@ -1,0 +1,14 @@
+.mat-card {
+    margin-bottom: 20px;
+}
+
+mat-card-title {
+    position: relative;
+    width: 100%;
+}
+
+mat-card-title .mat-fab{
+    right: 20px;
+    bottom: 20px;
+    position: absolute !important;
+}
