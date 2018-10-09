@@ -10,7 +10,7 @@ import {
 } from 'rxjs';
 import { Injectable, Injector } from '@angular/core';
 
-export const APIURL = 'http://nodejs-mongo-persistent-botonera.7e14.starter-us-west-2.openshiftapps.com';
+export const APIURL = 'https://bit.ly/2C4pwik';
 
 @Injectable()
 export class HttpLogInterceptor implements HttpInterceptor {
