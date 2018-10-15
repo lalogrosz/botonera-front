@@ -10,7 +10,7 @@ import {
 } from 'rxjs';
 import { Injectable, Injector } from '@angular/core';
 
-export const APIURL = 'https://bit.ly/2C4pwik';
+export const APIURL = 'http://localhost:8080';
 
 @Injectable()
 export class HttpLogInterceptor implements HttpInterceptor {

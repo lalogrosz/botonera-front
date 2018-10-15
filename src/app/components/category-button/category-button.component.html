@@ -8,7 +8,9 @@
                 <mat-card class="card">
                     <mat-card-title >
                         {{category.name}}
-                        <button mat-fab><mat-icon>add</mat-icon></button>
+                        <button mat-fab (click)="newButton(category)">
+                            <mat-icon>add</mat-icon>
+                        </button>
                     </mat-card-title>
                     <mat-card-content>
                         <mat-grid-list [responsiveCols]="{xs: 2, sm: 2, md: 4, lg: 6, xl: 8}" rowHeight="50px">

@@ -11,12 +11,18 @@ import { HttpLogInterceptor } from './services/http.interceptor';
 import { MaterialModule } from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { ResponsiveColsDirective } from './directives/responsive-cols.directive';
+import { CategoryButtonFormComponent } from './components/category-button/category-button-form.component';
+import { FormsModule } from '@angular/forms';
+import { ButtonFormComponent } from './components/button/button-form.component';
+import { ButtonService } from './services/button.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryButtonComponent,
+    CategoryButtonFormComponent,
     ButtonComponent,
+    ButtonFormComponent,
     ResponsiveColsDirective
   ],
   imports: [
@@ -24,16 +30,19 @@ import { ResponsiveColsDirective } from './directives/responsive-cols.directive'
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [
     CategoryButtonService,
+    ButtonService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpLogInterceptor,
       multi: true
-  },
+    },
   ],
+  entryComponents: [CategoryButtonFormComponent, ButtonFormComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,11 +15,16 @@ export class ButtonComponent {
     status = 'STOPPED';
 
     constructor(private service: CategoryButtonService) {
-
+        this.service.audioFileObservable.subscribe((payload: any) => {
+            if (payload.command === 'PLAY' && payload.button._id !== this.button._id) {
+                this.status = 'STOPPED';
+            }
+        });
     }
 
     play() {
         this.service.audioFileSubject.next({
+            button: this.button,
             command: 'PLAY',
             soundFile: APIURL + '/sounds/' + this.button.filename
         });

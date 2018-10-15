@@ -41,7 +41,7 @@
      <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">
             <li>
-                <button button="submit" mat-raised-button color="secondary">
+                <button button="submit" mat-raised-button color="accent" (click)="newCategory()">
                     <mat-icon>add</mat-icon> Add Category
                 </button>
             </li>            
@@ -49,7 +49,7 @@
      </div>
     </mat-toolbar>
     <main>
-        <category-button></category-button>
+        <category-button #categoryButton></category-button>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

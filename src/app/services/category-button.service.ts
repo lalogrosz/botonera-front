@@ -22,4 +22,8 @@ export class CategoryButtonService {
             })
         );
     }
+
+    addCategory(category: CategoryButtonModel) {
+        return this.http.post(APIURL + '/category-button', category);
+    }
 }
