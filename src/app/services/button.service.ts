@@ -15,11 +15,13 @@ export class ButtonService {
 
     }
 
-    addButton(name: string, file: File, category: string) {
+    addButton(data: any, category: string) {
 
         const formData: FormData = new FormData();
-        formData.append('sound', file, file.name);
-        formData.append('name', name);
+        formData.append('sound', data.file, data.file.name);
+        formData.append('name', data.name);
+        formData.append('region_start', data.region.start);
+        formData.append('region_end', data.region.end);
         formData.append('category_id', category);
 
         // create a http-post request and pass the form

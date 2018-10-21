@@ -25,8 +25,7 @@ export class ButtonComponent {
     play() {
         this.service.audioFileSubject.next({
             button: this.button,
-            command: 'PLAY',
-            soundFile: APIURL + '/sounds/' + this.button.filename
+            command: 'PLAY'
         });
         this.status = 'PLAYED';
     }
