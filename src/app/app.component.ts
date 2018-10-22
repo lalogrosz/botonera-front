@@ -26,7 +26,7 @@ export class AppComponent {
       const button: ButtonModel = data.button;
       switch (data.command) {
         case 'PLAY':
-          this.audio.src = APIURL + '/sounds/' + button.filename;
+          this.audio.src = APIURL + '/sounds/' + button.filename + '.mp3';
           this.audio.load();
           this.audio.play();
           this.audio.onended = ((event: Event) => {

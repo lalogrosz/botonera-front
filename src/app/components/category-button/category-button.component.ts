@@ -30,16 +30,17 @@ export class CategoryButtonComponent implements OnInit {
 
     newButton(category: CategoryButtonModel): void {
         const dialogRef = this.dialog.open(ButtonFormComponent, {
-          width: '250px',
+          width: '800px',
           data: {
             name: '',
-            filename: ''
+            file: '',
+            region: undefined
           }
         });
 
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
-                this.buttonService.addButton(result.name, result.file, category._id).subscribe(event => {
+                this.buttonService.addButton(result, category._id).subscribe(event => {
                     if (event instanceof HttpResponse) {
                         const button = event.body as ButtonModel;
                         category.buttons.push(button);

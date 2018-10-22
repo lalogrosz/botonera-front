@@ -1,17 +1,21 @@
 <h1 mat-dialog-title>New Button</h1>
 <div mat-dialog-content>
-    <p>Name</p>
     <mat-form-field>
-        <input matInput [(ngModel)]="data.name">
+        <input matInput placeholder="Name" [(ngModel)]="data.name">
     </mat-form-field>
 </div>
 <div mat-dialog-content>
-    <p>Sound file<span *ngIf="data.file">: {{data.file.name}}</span></p>
     <input #file type="file" [hidden]="true" accept="audio/*" (change)="setFile(file.files[0])">
-    <button mat-button mat mat-raised-button color="accent"
-         #upload (click)="file.click()">Upload file</button>
-
+    <button mat-button mat mat-raised-button color="accent" #upload (click)="file.click()">Select file</button>
     
+</div>
+<div mat-dialog-content>
+    <div id="waveform"></div>
+    <p align="center">
+        <button mat-button mat mat-raised-button color="accent" (click)="playPause()" *ngIf="fileLoaded">
+            {{isPlaying ? 'Pause' : 'Play'}}
+        </button>
+    </p>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Cancel</button>
