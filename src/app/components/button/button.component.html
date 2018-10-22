@@ -1,12 +1,12 @@
-<button mat-raised-button color="primary" *ngIf="status !== 'PLAYED';else playingButtons" 
+<button mat-raised-button color="primary" *ngIf="status !== 'PLAYED';else playingButtons"
     (click)="play()">
-    <mat-icon>play_circle_outline</mat-icon>    
+    <mat-icon>play_circle_outline</mat-icon>
     {{button.name}}
 </button>
 
 <ng-template #playingButtons>
-    <button mat-raised-button color="warn" >
-        <mat-icon (click)="stop()">stop_circle_outline</mat-icon>
+    <button mat-raised-button (click)="stop()" color="warn" >
+        <mat-icon >stop_circle_outline</mat-icon>
         {{button.name}}
-    </button>    
+    </button>
 </ng-template>

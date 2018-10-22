@@ -18,7 +18,9 @@ export class ButtonComponent {
         this.service.audioFileObservable.subscribe((payload: any) => {
             if (payload.command === 'PLAY' && payload.button._id !== this.button._id) {
                 this.status = 'STOPPED';
-            }
+            }/* else if (payload.command === 'STOP' && payload.button._id === this.button._id) {
+                this.status = 'STOPPED';
+            }*/
         });
     }
 
