@@ -10,7 +10,7 @@ import {
 } from 'rxjs';
 import { Injectable, Injector } from '@angular/core';
 
-export const APIURL = 'http://10.10.99.22:3000';
+export const APIURL = 'http://10.10.98.39:3000';
 
 @Injectable()
 export class HttpLogInterceptor implements HttpInterceptor {

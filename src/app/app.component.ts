@@ -30,7 +30,10 @@ export class AppComponent {
           this.audio.load();
           this.audio.play();
           this.audio.onended = ((event: Event) => {
-            console.log('Finish ' + button.name);
+            this.categoryButtonService.audioFileSubject.next({
+              command: 'STOP',
+              button: button
+            });
           });
           break;
         case 'PAUSE':

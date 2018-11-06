@@ -15,7 +15,9 @@
                     <mat-card-content>
                         <mat-grid-list [responsiveCols]="{xs: 2, sm: 2, md: 4, lg: 6, xl: 8}" rowHeight="50px">
                             <mat-grid-tile *ngFor="let button of category.buttons">
-                                <button-sound [button]="button"></button-sound>
+                                <div class="text-inside-grid">
+                                  <button-sound [button]="button"></button-sound>
+                                </div>
                             </mat-grid-tile>
                         </mat-grid-list>
                     </mat-card-content>

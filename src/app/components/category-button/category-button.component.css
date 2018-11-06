@@ -12,3 +12,8 @@ mat-card-title .mat-fab{
     bottom: 20px;
     position: absolute !important;
 }
+
+.text-inside-grid {
+  position: absolute;
+  left: 5px;
+}
